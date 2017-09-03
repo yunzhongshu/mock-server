@@ -1,0 +1,13 @@
+$/admin/auth/query_user_info.json
+GET
+{
+  id: 1,
+  name: 'admin',
+  pageList: []
+}$
+$/common/query_constant_data.json
+GET
+{
+    cashApplyStatus:[],
+    certProductType: []
+}$
