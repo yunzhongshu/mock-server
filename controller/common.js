@@ -4,7 +4,14 @@ exports.queryConstantData = (req, res, next) => {
 
   res.send(Result.success({
     cashApplyStatus: [],
-    certProductType: []
+    certProductType: [],
+    loanAmountType: [{
+      key: 'range',
+      value: '区间'
+    }, {
+      key: 'fixed',
+      value: '固定的'
+    }]
   }))
 
 }

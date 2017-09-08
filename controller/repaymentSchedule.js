@@ -1,19 +1,19 @@
 const Result = require('../common/result')
 
-exports.countRepaymentSchdules = (req, res, next) => {
+exports.countRepaymentSchedules = (req, res, next) => {
   let count = 2
-  res.send(count)
-  next
+  res.send(Result.success(count))
+  next()
 }
 
 
-exports.queryRepaymentSchdule = (req, res, next) => {
+exports.queryRepaymentSchedule = (req, res, next) => {
   let list = [
     {
       id: 10,
       type: 'cash',
       typeDesc: '现金贷',
-      schedule_no: '20170829',
+      scheduleNo: '20170829',
       currentPeriod: 1,
       repaymentAmount: 1020,
       status: 'wait_pay',
@@ -35,13 +35,20 @@ exports.queryRepaymentSchdule = (req, res, next) => {
       payTimes: 0,
       repaidTotalAmount: 0,
       isOverdue: false,
-      billNo: '2017090101'
+      billNo: '2017090101',
+      user: {
+        name: '张三',
+        phone: '13500000000'
+      },
+      userRiskInfo: {
+        labelName: '南条'
+      }
     },
     {
       id: 11,
       type: 'cash',
       typeDesc: '现金贷',
-      schedule_no: '2017082902',
+      scheduleo: '2017082902',
       currentPeriod: 2,
       repaymentAmount: 1020,
       status: 'wait_pay',
@@ -63,7 +70,14 @@ exports.queryRepaymentSchdule = (req, res, next) => {
       payTimes: 0,
       repaidTotalAmount: 0,
       isOverdue: false,
-      billNo: '2017090101'
+      billNo: '2017090101',
+      user: {
+        name: '张三',
+        phone: '13500000000'
+      },
+      userRiskInfo: {
+        labelName: '南条'
+      }
     }
   ];
   res.send(Result.success(list));
